@@ -1,5 +1,7 @@
 # Prison Management System
 
+(Project originally finised in May 2023)
+
 ## Project Overview
 The Prison Management System is a web-based application designed to manage prison operations efficiently. This system enables administrators to manage inmates, guards, cells, and shifts with ease. The project is built using **JavaScript (Node.js with Express)** for the backend, **SQL Server** for the database, and **Pug** as the template engine for the frontend.
 
