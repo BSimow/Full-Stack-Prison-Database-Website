@@ -1,0 +1,56 @@
+extends layout
+
+block content
+    h1= title
+
+    form(method='POST' action='/insert/inmate')
+
+        div.form-group
+            label(for='prisonerFirstName') Prisoner First Name:
+            input.form-control(type='text', name='prisonerFirstName', id='prisonerFirstName',placeholder='Enter prisoner first name')
+            
+        div.form-group
+            label(for='prisonerLastName') Prisoner Last Name:
+            input.form-control(type='text', name='prisonerLastName', id='prisonerLastName', placeholder='Enter prisoner last name')
+
+        div.form-group
+            label(for='sentence') Sentence:
+            input.form-control(type='text', name='sentence', id='sentence', placeholder='Enter prisoner sentence')   
+
+        div.form-group
+             label(for='pgang') Prisoner's Gang:
+             input.form-control(type='text', name='pgang', id='pgang', placeholder="Enter prisoner's gang")
+
+        div.form-group
+            label(for='cell') Select a cell:
+            div.inline-block
+                select.form-control(name='cell' id = 'cell')
+                    each cid in CIDs
+                        option(value=cid)= cid
+
+        div.form-group
+            label(for='conduct') Conduct:
+            div.inline-block
+                select.form-control(name='conduct' id = 'conduct')
+                    each conduct in conducts
+                        option(value=conduct)= conduct
+
+        div.form-group
+            label(for='gender') Gender:
+            div.inline-block
+                select.form-control(name='gender' id = 'gender')
+                    each gender in genders
+                        option(value=gender)= gender
+
+        div.form-group
+            label(for='parole') Parole:
+            div.inline-block
+                select.form-control(name='parole' id = 'parole')
+                    each parole in paroles
+                        option(value=parole)= parole
+        div
+            button.btn.btn-insert(type='insert') Insert
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/inmates') View Inmates

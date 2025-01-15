@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    form(method='POST' action='/delete/cell')
+        div.form-group
+        label(for='cell') CID:
+        div.inline-block
+        select.form-control(name='cell' id = 'cell')
+            each cid in cids
+                option(value=cid)= cid
+        div
+            button.btn.btn-delete(type='delete') Delete
+        div.container
+            div.row
+                div.col-sm-2
+                    a.btn.btn-primary(href='/cells') View Cells
